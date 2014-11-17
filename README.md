@@ -1,4 +1,4 @@
-<img src="public/demo.png" width="150" height="200">
+<img src="public/demo.png" width="200" height="300">
 
 > This is a fashion discovery platform. I started off with a working wireframe mock using a pinterest-like board layout, feeding off a RESTful API backend delivering JSON data via AJAX calls, and using infinite scroll to add content to the page as the user scrolls down.
 
@@ -47,7 +47,7 @@ node server.js
 - Angular-bootstrap: For the five start rating, I used ui.bootstrap.rating.
 - CSS3: It took care pinterest-like layout and other cool details. 
 - Lo-dash: Why Lo-dash? Why not, it is better than Underscore.js!
-- Express.js: Did all the routing work. 
+- Express.js: Hard worker, did all the backend job. 
 
 ## Author
 Xianhui Feng 
