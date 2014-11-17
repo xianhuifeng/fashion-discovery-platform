@@ -1,4 +1,4 @@
-<img src="public/demo.png" width="200" height="300">
+<img src="public/demo.png" width="300" height="200">
 
 > This is a fashion discovery platform. I started off with a working wireframe mock using a pinterest-like board layout, feeding off a RESTful API backend delivering JSON data via AJAX calls, and using infinite scroll to add content to the page as the user scrolls down.
 
