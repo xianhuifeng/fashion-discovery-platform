@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<!-- Load css files -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!-- Load js files. Included in libraries and static files. -->
+	<script src="bower_components/jQuery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src='bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js'></script>
+	<script src="bower_components/lodash/dist/lodash.js"></script>
+	<script src="app.js"></script>
+</head>
+
+<body ng-controller="HomeCtrl" class="ng-cloak"> <!-- ng-cloak helps make sure the html do not show raw angular page before controllers get loaded -->
+<div id="wrapper" >
+	<div id="columns" infinite-scroll="photos.nextPage();" infinite-scroll-disabled='photos.busy' infinite-scroll-distance="1">
+		<div class="pin" ng-repeat="photo in photos.items">
+			<img ng-src="{{photo.thumbnail_url}}" />		
+			<p><strong>{{photo.title}}</strong></p></br>
+			<p ng-if="overFlow(photo.blurb)">{{truncateBlurb(photo.blurb)}}<a ng-href="{{photo.details_url}}"><strong>Read More</strong></a></p>
+			<p ng-if="!overFlow(photo.blurb)">{{photo.blurb}}</p>
+			<rating class="rating" ng-model="rate" max="max" readonly="isReadonly" on-leave="overStar = null"></rating>
+		</div>
+	</div>
+</div>
+<h2 ng-show='photos.busy'>Loading data...</h2>
+<h3 ng-show='photos.noMore'>There are no more photos. Time to dress up! Have fun! :)</h3>
+</body>
+</html>
